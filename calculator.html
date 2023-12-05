@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <script>
+    function calculate() {
+      var operand1 = parseFloat(prompt("Enter the first number:"));
+      var operator = prompt("Enter the operator (+, -, *, /):");
+      var operand2 = parseFloat(prompt("Enter the second number:"));
+      var result;
+
+      switch(operator) {
+        case "+":
+          result = operand1 + operand2;
+          break;
+        case "-":
+          result = operand1 - operand2;
+          break;
+        case "*":
+          result = operand1 * operand2;
+          break;
+        case "/":
+          if (operand2 !== 0) {
+            result = operand1 / operand2;
+          } else {
+            alert("Error: Division by zero");
+            return;
+          }
+          break;
+        default:
+          alert("Invalid operator");
+          return;
+      }
+
+      alert("Result: " + result);
+    }
+
+    // Trigger the calculator
+    calculate();
+  </script>
+</body>
+</html>
